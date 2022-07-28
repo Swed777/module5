@@ -29,15 +29,15 @@ print()
 income_year = int(input('Введите Ваш доход за год: '))
 min_income = 10000
 max_income = 50000
-#tax = 13%, 20%, 30%
+tax1, tax2, tax3 = 13, 20, 30
 print('_______________________')
 
-if income_year < min_income:
-  tax_volume = (min_income- income_year) / 100 * 13
-elif income_year >= min_income and income_year < max_income:
-  tax_volume = (income_year - min_income) / 100 * 20 + min_income / 100 * 13
+if income_year <= min_income:
+  tax_volume = (income_year) / 100 * tax1
+elif income_year > min_income and income_year <= max_income:
+  tax_volume = (income_year - min_income) / 100 * tax2 + min_income / 100 * tax1
 else:
-  tax_volume = (income_year - max_income) / 100 * 30 + (max_income - min_income) / 100 * 20 + min_income / 100 * 13
+  tax_volume = (income_year - max_income) / 100 * tax3 + (max_income - min_income) / 100 * tax2 + min_income / 100 * tax1
 
 print(' Ваш налог = ', tax_volume)
 
